@@ -8,6 +8,8 @@ TagManager:
   - Bomb
   - Money
   - Ground
+  - ghost
+  - coin
   layers:
   - Default
   - TransparentFX
