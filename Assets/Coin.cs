@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-   /*public int coinCount = 1;
+    public int coinCount = 1;
+    [SerializeField]GameObject gm;
+    bool hasHitCoin = false;
+    private void Update()
+    {
+        if (hasHitCoin == true)
+        {
+            coinCount++;
+            gm.GetComponent<GameManager>().AddScore(coinCount);
+            Destroy(gameObject);
+        }
+        else
+            return;
+       
+    }
 
      private void OnTriggerEnter(Collider col)
      {
-       if (col.CompareTag("coin"))
+       if (col.CompareTag("Player"))
        {
-        //GameManager.instance.AddScore(coinCount);
-
-        // Destroy the coin object
-        Destroy(gameObject);
+            hasHitCoin = true;
+        
+ 
        }
-     }*/
+        else
+        {
+            hasHitCoin = false;
+        }
+     }
   
 }

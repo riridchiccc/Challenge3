@@ -21,7 +21,8 @@ public class PlayerControllerX : MonoBehaviour
     public AudioClip moneySound;
     public AudioClip explodeSound;
 
-
+    public GameManager gm;
+    public int coinAmount;
  
     void Start()
     {
@@ -67,6 +68,7 @@ public class PlayerControllerX : MonoBehaviour
         else if (other.gameObject.CompareTag("coin"))
         {
             fireworksParticle.Play();
+            gm.AddScore(coinAmount);
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
       

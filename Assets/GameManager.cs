@@ -7,27 +7,26 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    
+
     public TextMeshProUGUI coinCountText;
     public int coinCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.HasKey("TNCoin"))
+       /* if (PlayerPrefs.HasKey("TNCoin"))
         {
             coinCount = PlayerPrefs.GetInt("TNCoin");
-        }
+        }*/
 
         coinCountText.text = coinCount.ToString();
     }
 
-     void OnTriggerEnter(Collider col)
-     {
-       while (col.tag == "coin")
-       {
-        
-       }
-     }
 
-    
+
+    public void AddScore(int _coinCount)
+    {
+       coinCount += _coinCount;
+    }
 }
